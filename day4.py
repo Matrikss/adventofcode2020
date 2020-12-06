@@ -32,8 +32,7 @@ with open('input4.txt') as f:
     passport = {}
     for line in lines:
         if len(line) == 0:
-            key_set = set(passport.keys())
-            if mandatory.issubset(key_set):
+            if mandatory.issubset(passport.keys()):
                 valid_passports_a += 1
                 if validate(passport):
                     valid_passports_b += 1
