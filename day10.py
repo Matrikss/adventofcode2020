@@ -58,7 +58,8 @@ with open('input10.txt') as f:
     while i < len(lines):
         look_aheads[i] = look_ahead(lines, i)
         i += 1
-    answer_b = explore(lines, 0, look_aheads, len(lines))
+    # huge hack, find a 3 range in the middle of the input and divide into 2 branches
+    answer_b = explore(lines, 0, look_aheads, 47) * explore(lines, 47, look_aheads, len(lines))
     # cProfile.run('explore(lines, 0, look_aheads, len(lines))')
 
     print(answer_a)
