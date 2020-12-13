@@ -1,4 +1,5 @@
 import math
+import threading
 import cProfile
 from multiprocessing import Process
 
@@ -17,11 +18,20 @@ def match_found(dict, timestamp):
     return True
 
 
+def print_progress():
+    print(' Progress: ' + str(progress))
+    threading.Timer(60, print_progress).start()
+
+
 def solve(offsets, lowest_freq, start, iterator):
     i = start
+    global progress
+    progress = 0
+    print_progress()
 
     while True:
         timestamp = lowest_freq * i
+        progress = timestamp
         if match_found(offsets, timestamp):
             return timestamp
         i += iterator
@@ -67,9 +77,9 @@ def part2(start, iterator_offset, iterator=1):
 
 
 if __name__ == '__main__':
-    part2(1, 0)
+    # part2(1, 0)
     # cProfile.run('part2(1, 0)')
-    # even = Process(target=part2, args=(1, 0, 2,))
-    # even.start()
-    # odd = Process(target=part2, args=(1, 1, 2,))
-    # odd.start()
+    even = Process(target=part2, args=(100000000000000, 0, 2,))
+    even.start()
+    odd = Process(target=part2, args=(100000000000000, 1, 2,))
+    odd.start()
