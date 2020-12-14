@@ -26,8 +26,8 @@ def print_progress():
 def solve(offsets, lowest_freq, start, iterator):
     i = start
     global progress
-    progress = 0
-    print_progress()
+    # progress = 0
+    # print_progress()
 
     while True:
         timestamp = lowest_freq * i
@@ -77,9 +77,9 @@ def part2(start, iterator_offset, iterator=1):
 
 
 if __name__ == '__main__':
-    # part2(1, 0)
+    part2(556100000000000, 0)
     # cProfile.run('part2(1, 0)')
-    even = Process(target=part2, args=(100000000000000, 0, 2,))
-    even.start()
-    odd = Process(target=part2, args=(100000000000000, 1, 2,))
-    odd.start()
+    # even = Process(target=part2, args=(100000000000000, 0, 2,))
+    # even.start()
+    # odd = Process(target=part2, args=(100000000000000, 1, 2,))
+    # odd.start()
