@@ -1,4 +1,5 @@
-TARGET = 2020
+# TARGET = 2020 # part 1
+TARGET = 30000000  # part 2
 
 input = [12, 1, 16, 3, 11, 0]
 input_size = len(input)
@@ -16,7 +17,6 @@ while turn <= TARGET:
         if turn == input_size + 1:
             # especial after start
             previous_turn_number = 0
-            # print(str(turn) + ':' + str(previous_turn_number))
             turn += 1
             continue
         # seen before
@@ -27,7 +27,6 @@ while turn <= TARGET:
         # new
         visits[previous_turn_number] = turn - 1
         previous_turn_number = 0
-    # print(str(turn) + ':' + str(previous_turn_number))
     turn += 1
 
 print(previous_turn_number)
