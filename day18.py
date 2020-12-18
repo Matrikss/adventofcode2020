@@ -13,11 +13,11 @@ def calculate_line(line, is_part2=False):
 
 def calculate(start_index=0, expression='', is_part2=True):
     if is_part2:
-        groups = re.findall('(\\d+ \\+ \\d+)', expression)
-        while len(groups) > 0:
-            for group in groups:
-                expression = expression.replace(group, str(eval(group)), 1)
-            groups = re.findall('(\\d+ \\+ \\d+)', expression)
+        match = re.search('(\\d+ \\+ \\d+)', expression)
+        while match:
+            group = match.groups()[0]
+            expression = expression.replace(group, str(eval(group)), 1)
+            match = re.search('(\\d+ \\+ \\d+)', expression)
         return eval(expression)
     else:
         expression_split = expression.split(' ')
@@ -44,6 +44,3 @@ with open('input18.txt') as f:
 
     print(sum(part_1))
     print(sum(part_2))
-
-# 65663464359529 too high
-# 65663464313197 too high
