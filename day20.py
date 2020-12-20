@@ -84,9 +84,9 @@ class Tile:
 
     def check_link_with(self, other_tile):
         this = self.get_edges()
-        this.update(self.flip_vertically().get_edges(), self.flip_horizontally().get_edges())
+        this.update({x[::-1] for x in this})
         other = other_tile.get_edges()
-        other.update(other_tile.flip_vertically().get_edges(), other_tile.flip_horizontally().get_edges())
+        other.update({x[::-1] for x in other})
         matches = this.intersection(other)
         if len(matches) > 0:
             self.links.add(other_tile.id)
