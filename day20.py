@@ -25,7 +25,7 @@ class Tile:
             self.right.append(line_list[i][EDGE_LENGTH - 1])
         self.left = ''.join(self.left)
         self.right = ''.join(self.right)
-        self.links = set()
+        self.links = {}
         self.is_valid()
 
     def is_valid(self):
@@ -82,6 +82,16 @@ class Tile:
     def get_edges(self):
         return {self.top, self.bottom, self.left, self.right}
 
+    def locate_edge(self, edge):
+        if edge in [self.top, self.top[::-1]]:
+            return 'top'
+        if edge in [self.bottom, self.bottom[::-1]]:
+            return 'bottom'
+        if edge in [self.left, self.left[::-1]]:
+            return 'left'
+        if edge in [self.right, self.right[::-1]]:
+            return 'right'
+
     def check_link_with(self, other_tile):
         this = self.get_edges()
         this.update({x[::-1] for x in this})
@@ -89,8 +99,9 @@ class Tile:
         other.update({x[::-1] for x in other})
         matches = this.intersection(other)
         if len(matches) > 0:
-            self.links.add(other_tile.id)
-            other_tile.links.add(self.id)
+            match = matches.pop()
+            self.links[other_tile.id] = self.locate_edge(match)
+            other_tile.links[self.id] = other_tile.locate_edge(match)
 
 
 def parse_tiles():
@@ -122,3 +133,4 @@ if __name__ == '__main__':
     assert len(interiors) == len(tile_list) - ((mosaic_sides - 2) * 4) - 4
     assert len(edges) == (mosaic_sides - 2) * 4
     print(functools.reduce(lambda x, y: x * y, corners))
+
