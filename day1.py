@@ -18,7 +18,7 @@ def sum_search(numbers, target):
             end -= 1
 
 
-with open('input1.txt') as f:
+with open('input/input1.txt') as f:
     read_data = f.read()
 
     numbers = read_data.split('\n')

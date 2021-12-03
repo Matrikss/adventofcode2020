@@ -21,7 +21,7 @@ def rules_valid_for_value(value=0, rules={}):
     return result
 
 
-with open('input16.txt') as f:
+with open('input/input16.txt') as f:
     read_data = f.read()
 
     lines = read_data.split('\n')

@@ -43,7 +43,7 @@ def flip(line):
     return line.replace(JMP, NOP)
 
 
-with open('input8.txt') as f:
+with open('input/input8.txt') as f:
     read_data = f.read()
 
     lines = read_data.split('\n')

@@ -21,7 +21,7 @@ def validate(passport):
     return True
 
 
-with open('input4.txt') as f:
+with open('input/input4.txt') as f:
     read_data = f.read()
 
     lines = read_data.split('\n')

@@ -9,7 +9,7 @@ LEFT = 'L'
 RIGHT = 'R'
 FORWARD = 'F'
 
-with open('input12.txt') as f:
+with open('input/input12.txt') as f:
     read_data = f.read()
 
     lines = read_data.split('\n')

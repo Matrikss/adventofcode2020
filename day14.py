@@ -10,7 +10,7 @@ def get_binary(int_value):
     return list(bin_value.rjust(MASK_SIZE, '0'))
 
 
-with open('input14.txt') as f:
+with open('input/input14.txt') as f:
     read_data = f.read()
 
     memory_a = {}

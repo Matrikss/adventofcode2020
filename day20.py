@@ -106,7 +106,7 @@ class Tile:
 
 def parse_tiles():
     tiles = []
-    with open('input20.txt') as f:
+    with open('input/input20.txt') as f:
         read_data = f.read()
         lines = read_data.split('\n')
 

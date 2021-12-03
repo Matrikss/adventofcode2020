@@ -6,7 +6,7 @@ def get_position(code):
     return row_number, column_number
 
 
-with open('input5.txt') as f:
+with open('input/input5.txt') as f:
     read_data = f.read()
 
     lines = read_data.split('\n')

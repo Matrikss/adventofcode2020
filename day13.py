@@ -38,7 +38,7 @@ def solve(offsets, lowest_freq, start, iterator):
 
 
 def part2(start, iterator_offset, iterator=1):
-    with open('input13.txt') as f:
+    with open('input/input13.txt') as f:
         read_data = f.read()
 
         lines = read_data.split('\n')

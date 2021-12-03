@@ -40,7 +40,7 @@ valid_part1 = 0
 valid_part2 = 0
 raw_rules = {}
 
-with open('input19.txt') as f:
+with open('input/input19.txt') as f:
     read_data = f.read()
     lines = read_data.split('\n')
 

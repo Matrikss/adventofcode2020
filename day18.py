@@ -32,7 +32,7 @@ def calculate(start_index=0, expression='', is_part2=True):
 part_1 = []
 part_2 = []
 
-with open('input18.txt') as f:
+with open('input/input18.txt') as f:
     read_data = f.read()
     lines = read_data.split('\n')
 

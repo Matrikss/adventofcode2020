@@ -38,7 +38,7 @@ def explore(adapters, starting_position, look_aheads, size):
     return 1
 
 
-with open('input10.txt') as f:
+with open('input/input10.txt') as f:
     read_data = f.read()
 
     frequency = {}

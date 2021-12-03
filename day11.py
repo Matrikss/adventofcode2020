@@ -44,7 +44,7 @@ def check_change(seat_map, position_i, position_j, size_i, size_j):
     return seat_map[position_i][position_j]
 
 
-with open('input11.txt') as f:
+with open('input/input11.txt') as f:
     read_data = f.read()
 
     lines = read_data.split('\n')

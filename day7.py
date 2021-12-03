@@ -15,7 +15,7 @@ def find_containers_b(bag_dict={}, bag=''):
     return result
 
 
-with open('input7.txt') as f:
+with open('input/input7.txt') as f:
     read_data = f.read()
 
     bags = {}

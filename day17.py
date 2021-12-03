@@ -1,7 +1,7 @@
 def get_initial_state():
     result = {}
 
-    with open('input17.txt') as f:
+    with open('input/input17.txt') as f:
         read_data = f.read()
         lines = read_data.split('\n')
 
